@@ -2,6 +2,8 @@ import express from 'express'
 import events from './data/events.js'
 import dotenv from 'dotenv'
 import connectDB from './config/db.js'
+import User from './models/userModel.js'
+import Event from './models/eventModel.js'
 
 const app = express()
 dotenv.config()
