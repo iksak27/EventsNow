@@ -1,6 +1,5 @@
 const events = [
     {
-        _id: '1',
         name: 'Leadership Experience Tour PM (Michigan State University Education Center)',
         image: '/images/event1.png',
         shortdescription: 'Come experience a full day of dynamic speakers who share their powerful stories at the Leadership Experience Tour.',
@@ -13,7 +12,6 @@ const events = [
         numTickets: 10,
     },
     {
-        _id:'2',
         name: 'Network After Work Detroit at Motor City Gas',
         image: '/images/event2.png',
         shortdescription: 'Network After Work invites you to an evening out with other local business owners, entrepreneurs, executives, and career-minded professional',
@@ -26,7 +24,6 @@ const events = [
         numTickets: 6,
             },
     {
-        _id:'3',
         name: 'Successful Leadership For New Managers - Free Workshop - Warren, MI',
         image: '/images/event3.png',
         shortdescription: 'Live Workshop + Coaching on how to create engagement and high performance as a new manager. Limited seats - Sign up to secure your spot.',
@@ -39,7 +36,6 @@ const events = [
         numTickets: 15,
     },
     {
-        _id:'4',
         name: 'Startups Mentorship Program',
         image: '/images/event4.png',
         shortdescription: 'Join This Startup Business Mentorship Event Today!',
@@ -52,7 +48,6 @@ const events = [
         numTickets: 1,
         },
     {
-        _id:'5',
         name: 'School of Engineering and Computer Science 2022 Faculty Research Expo',
         image: '/images/event5.png',
         shortdescription: 'Unlock future opportunities at the OU School of Engineering and Computer Science’s 2022 Faculty Research Expo',
@@ -65,7 +60,6 @@ const events = [
         numTickets: 0,
     },
     {
-        _id:'6',
         name: 'Fall Festival',
         image: '/images/event6.png',
         shortdescription: 'Join Mike Jones and our Keller Williams team in Rochester Park for our Fall Festival!',
@@ -78,7 +72,6 @@ const events = [
         numTickets: 10,
     },
     {
-        _id:'7',
         name: 'Family Splash Event!',
         image: '/images/event7.png',
         shortdescription: 'FREE Family Swim Event at Goldfish Birmingham!',
@@ -91,7 +84,6 @@ const events = [
         numTickets: 19,
     },
     {
-        _id:'8',
         name: 'The Detroit CSA Welcomes Varonis & Exabeam!',
         image: '/images/event8.png',
         shortdescription: 'The Detroit CSA Welcomes Varonis & Exabeam!',
@@ -104,7 +96,6 @@ const events = [
         numTickets: 13,
     },
     {
-        _id:'9',
         name: 'Let\'s Talk... Conversations on Race, Equity, & Belonging',
         image: '/images/event9.png',
         shortdescription: 'Our nation has been re-awakened to the systemic racism that exists. How do we start to VALUE DIFFERENCE in the workplace... Let\'s Talk...',
@@ -117,7 +108,6 @@ const events = [
         numTickets: 3,
     },
     {
-        _id:'10',
         name: 'LOUISE BOURGEOIS: DOODLING AND THE UNCONSCIOUS',
         image: '/images/event10.png',
         shortdescription: 'Join London Drawing Group for this class dedicated to one of our all time favourite female artists- Louise Bourgeois!',
