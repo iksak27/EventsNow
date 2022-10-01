@@ -17,13 +17,13 @@ export const eventListReducer = (state = {events: []}, action)  => {
 }
 
 export const eventDetailsReducer = (
-    state = { product: { reviews: [] } },
+    state = { event: { reviews: [] } },
     action ) => {
         switch (action.type) {
             case EVENT_DETAILS_REQUEST:
                 return {loading: true, ...state }
             case EVENT_DETAILS_SUCCESS:
-                return { loading: false, product: action.payload }
+                return { loading: false, event: action.payload }
             case EVENT_DETAILS_FAIL:
                 return { loading: false, error: action.payload }
             default:

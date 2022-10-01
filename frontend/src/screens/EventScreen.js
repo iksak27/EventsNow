@@ -34,7 +34,7 @@ dispatch(listEventDetails(params.id))
     ) : (
     <Row>
         <Col md={6}>
-            <Image src={event.image} alt={event.name} fluid />
+        <Image src={event.image} alt={event.name} fluid />
         </Col>
         <Col md={3}>
             <ListGroup variant='flush'>
