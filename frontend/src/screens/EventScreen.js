@@ -1,25 +1,37 @@
 import React, {useState, useEffect} from 'react'
-import { Link, useParams } from 'react-router-dom'
-import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
-import axios from 'axios'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useParams, useNavigate } from 'react-router-dom'
+import { Row, Col, Image, ListGroup, Card, Button, Form } from 'react-bootstrap'
+import Message from '../components/Message'
+import Loader from '../components/Loader'
+import { listEventDetails } from '../actions/eventActions'
 
 const EventScreen = () => {
 
+    const [qty, setQty] = useState(0);
     const params = useParams();
-    const [event, setEvent] = useState({})
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const eventDetails = useSelector((state) => state.eventDetails)
+    const {loading, error, event } = eventDetails
 
     useEffect(() => {
-        const fetchEvents = async () => {
-            const {data} = await axios.get(`/api/events/${params.id}`)
-            setEvent(data)
-        }
-        fetchEvents()
-    }, [params.id])
+dispatch(listEventDetails(params.id))
+    }, [dispatch,params.id])
+
+    const addToCartHandler = () => {
+        navigate(`/cart/${params.id}?qty=${qty}`)
+    }
   return (
 <>
 <Link className='btn btn-light my-3' to='/'>
     Go back
     </Link>
+    {loading ? (
+        <Loader />
+    ) : error ? (
+        <Message variant='danger'>{error}</Message>
+    ) : (
     <Row>
         <Col md={6}>
             <Image src={event.image} alt={event.name} fluid />
@@ -52,11 +64,32 @@ const EventScreen = () => {
                         </Col>
                     </Row>
                 </ListGroup.Item>
+                {event.numTickets > 0 && (
+                    <ListGroup.Item>
+                        <Row>
+                            <Col>Qty</Col>
+                            <Col>
+                            <Form.Control
+                            as='select'
+                            value={qty}
+                            onChange={(e) => setQty(e.target.value) }
+                            >
+                                {[...Array(event.numTickets).keys()].map((x) => (
+                                    <option key={x + 1} value={x+1}>
+                                        {x+1}
+                                    </option>
+                                ))}
+                            </Form.Control>
+                            </Col>
+                        </Row>
+                    </ListGroup.Item>
+                )}
                 <ListGroup.Item>
                     <Button
                     className='btn-block'
                     type='button'
                     disabled={event.numTickets === 0}
+                    onClick = {addToCartHandler}
                     >
                         Add to Cart
                     </Button>
@@ -64,7 +97,7 @@ const EventScreen = () => {
                 </ListGroup>
             </Card>
         </Col>
-    </Row>
+    </Row>)}
         </>
     )
 }
